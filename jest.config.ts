@@ -1,11 +1,19 @@
 /* eslint-disable */
 export default {
-  displayName: 'frontend',
+  displayName: 'backend-e2e',
   preset: '../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  globalSetup: '<rootDir>/src/support/global-setup.ts',
+  globalTeardown: '<rootDir>/src/support/global-teardown.ts',
+  setupFiles: ['<rootDir>/src/support/test-setup.ts'],
+  testEnvironment: 'node',
   transform: {
-    '^.+\\.[tj]s$': '@swc/jest',
+    '^.+\\.[tj]s$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.spec.json',
+      },
+    ],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../coverage/frontend',
+  coverageDirectory: '../coverage/backend-e2e',
 };
