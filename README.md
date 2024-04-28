@@ -16,7 +16,7 @@ Add Nx plugins to leverage their code generators and automated, inferred tasks.
 
 ```
 # Add plugin
-npx nx add @nx/react
+npx nx add @nx/reacy
 
 # Use code generator
 npx nx generate @nx/react:app demo
